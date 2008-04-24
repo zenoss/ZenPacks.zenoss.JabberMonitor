@@ -36,7 +36,7 @@ class JabberMonitorDataSource(ZenPackPersistence, RRDDataSource.RRDDataSource):
     sourcetype = JABBER_MONITOR
 
     timeout = 60
-    eventClass = '/Status/Net'
+    eventClass = '/Status/Jabber'
         
     hostname = '${dev/id}'
     port = 5223
@@ -107,7 +107,7 @@ class JabberMonitorDataSource(ZenPackPersistence, RRDDataSource.RRDDataSource):
 
 
     def addDataPoints(self):
-        if not hasattr(self.datapoints, 'time'):
+        if not self.datapoints._getOb('time', None):
             self.manage_addRRDDataPoint('time')
 
 

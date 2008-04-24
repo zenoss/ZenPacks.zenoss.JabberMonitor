@@ -1,28 +1,16 @@
-###########################################################################
-#
-# This program is part of Zenoss Core, an open source monitoring platform.
-# Copyright (C) 2008, Zenoss Inc.
-#
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of the GNU General Public License version 2 as published by
-# the Free Software Foundation.
-#
-# For complete information please visit: http://www.zenoss.com/oss/
-#
-###########################################################################
-
 ################################
 # These variables are overwritten by Zenoss when the ZenPack is exported
 # or saved.  Do not modify them directly here.
+# NB: PACKAGES is deprecated
 NAME = 'ZenPacks.zenoss.JabberMonitor'
-VERSION = '2.2.0'
-AUTHOR = 'Zenoss Team'
+VERSION = '1.0'
+AUTHOR = 'Zenoss'
 LICENSE = ''
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.zenoss']
 PACKAGES = ['ZenPacks', 'ZenPacks.zenoss', 'ZenPacks.zenoss.JabberMonitor']
 INSTALL_REQUIRES = []
-COMPAT_ZENOSS_VERS = '>=2.1.70'
-PREV_ZENPACK_NAME = 'JabberMonitor'
+COMPAT_ZENOSS_VERS = '>=2.1'
+PREV_ZENPACK_NAME = ''
 # STOP_REPLACEMENTS
 ################################
 # Zenoss will not overwrite any changes you make below here.
@@ -52,7 +40,7 @@ setup(
     namespace_packages = NAMESPACE_PACKAGES,
     
     # Tell setuptools what packages this zenpack provides.
-    packages = PACKAGES,
+    packages = find_packages(),
     
     # Tell setuptools to figure out for itself which files to include
     # in the binary egg when it is built.
