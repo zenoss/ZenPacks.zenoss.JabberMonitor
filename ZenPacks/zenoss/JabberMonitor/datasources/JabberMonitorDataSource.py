@@ -20,6 +20,7 @@ import Products.ZenModel.RRDDataSource as RRDDataSource
 from Products.ZenModel.ZenPackPersistence import ZenPackPersistence
 from AccessControl import ClassSecurityInfo, Permissions
 from Products.ZenUtils.ZenTales import talesCompile, getEngine
+from Products.ZenUtils.Utils import binPath
 
 
 def safeQuote( unsafeString ):
@@ -87,7 +88,7 @@ class JabberMonitorDataSource(ZenPackPersistence, RRDDataSource.RRDDataSource):
 
 
     def getCommand(self, context):
-        parts = ['check_jabber']
+        parts = [binPath('check_jabber')]
         if self.hostname:
             parts.append('-H %s' % self.hostname)
         if self.port:
@@ -97,8 +98,7 @@ class JabberMonitorDataSource(ZenPackPersistence, RRDDataSource.RRDDataSource):
         if self.expectString:
             parts.append('-e %s ' % safeQuote( self.expectString ) )
         cmd = ' '.join(parts)
-        cmd = '$ZENHOME/libexec/' + \
-                    RRDDataSource.RRDDataSource.getCommand(self, context, cmd)
+        cmd = RRDDataSource.RRDDataSource.getCommand(self, context, cmd)
         return cmd
 
 
