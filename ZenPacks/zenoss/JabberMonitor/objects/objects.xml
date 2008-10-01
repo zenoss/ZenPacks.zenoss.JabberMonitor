@@ -2,6 +2,9 @@
 <objects>
 <!-- ('', 'zport', 'dmd', 'Devices', 'rrdTemplates', 'JabberMonitor') -->
 <object id='/zport/dmd/Devices/rrdTemplates/JabberMonitor' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property type="string" id="targetPythonClass" mode="w" >
+Products.ZenModel.Device
+</property>
 <tomanycont id='datasources'>
 <object id='JabberMonitor' module='ZenPacks.zenoss.JabberMonitor.datasources.JabberMonitorDataSource' class='JabberMonitorDataSource'>
 <property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
