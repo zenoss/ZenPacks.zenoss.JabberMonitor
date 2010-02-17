@@ -79,8 +79,12 @@ class JabberMonitorDataSource(ZenPackPersistence, RRDDataSource.RRDDataSource):
 
     def getDescription(self):
         if self.sourcetype == self.JABBER_MONITOR:
-            return self.ipAddress + self.url
-        return RRDDataSource.RRDDataSource.getDescription(self)
+            ipAddress = getattr(self, 'ipAddress', '')
+            url = getattr(self, 'url', '')
+            description = ipAddress + url
+        else:
+            description = RRDDataSource.RRDDataSource.getDescription(self)
+        return description
 
 
     def useZenCommand(self):
