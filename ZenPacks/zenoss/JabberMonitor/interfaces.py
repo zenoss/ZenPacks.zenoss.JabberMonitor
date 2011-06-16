@@ -18,14 +18,14 @@ from Products.Zuul.utils import ZuulMessageFactory as _t
 class IJabberMonitorDataSourceInfo(IRRDDataSourceInfo):
     timeout = schema.Int(title=_t(u'Timeout (seconds)'))
     cycletime = schema.Int(title=_t(u'Cycle Time (seconds)'))
-    hostname = schema.Text(title=_t(u'Host Name'),
-                           group=_t(u'Jabber'))
+    hostname = schema.TextLine(title=_t(u'Host Name'),
+                               group=_t(u'Jabber'))
     port = schema.Int(title=_t(u'Port'),
                        group=_t(u'Jabber'))
-    sendString = schema.Text(title=_t(u'Send String'),
-                             group=_t(u'Jabber'))
-    expectString = schema.Text(title=_t(u'Expect String'),
-                               group=_t(u'Jabber'))
+    sendString = schema.TextLine(title=_t(u'Send String'),
+                                 group=_t(u'Jabber'))
+    expectString = schema.TextLine(title=_t(u'Expect String'),
+                                   group=_t(u'Jabber'))
                       
     
     
