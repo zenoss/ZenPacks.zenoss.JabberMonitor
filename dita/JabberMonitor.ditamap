@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:map" "map.dtd">
+<map>
+   <title>JabberMonitor</title>
+   <topicref href="topics/JabberMonitor.dita">
+      <topicref href="topics/JabberMonitor_ref-Prerequisites.dita"/>
+      <topicref href="topics/JabberMonitor_task-Enable-Monitoring.dita"/>
+      <topicref href="topics/JabberMonitor_ref-Daemons.dita"/>
+   </topicref>
+</map>
